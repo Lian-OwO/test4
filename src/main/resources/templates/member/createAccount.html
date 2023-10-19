@@ -1,93 +1,85 @@
 <!DOCTYPE html>
-
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns="">
-
-
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<link rel="stylesheet" th:href="@{/css/createAccount.css}"/>
-
-
-<script src="https://code.jquery.com/jquery-3.7.1.js"
-                integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossOrigin="anonymous"></script>
+<link rel="stylesheet" th:href="@{/css/createAccount.css}" />
 <script th:src="@{/js/createAccount.js}"></script>
-<script th:inline="javascript">
-                $(document).ready(function(){
+
+<th:block layout:fragment="script">
+    <script th:inline="javascript">
+        $(document).ready(function(){
             var errorMessage = [[${errorMessage}]];
             if(errorMessage != null){
                 alert(errorMessage);
             }
         });
-        $(document).ready(function () {
-            $('#email').on('blur', function () {
-            var email = $(this).val();
-            if (email !== '') {
-                $.ajax({
-                    type: 'GET',
-                    url: '/members/checkEmailDuplicate?email=' + email,
-                    success: function (response) {
-                        if (response === 'DUPLICATE') {
-                            alert("중복된 이메일 주소입니다.");
-                            console.log("중복된 이메일 주소");
-                            $('#email').focus();
-                        }
-                        console.log(email);
-                    }
-                });
-            }
-        });
-    });
     </script>
+</th:block>
 
 <body>
 <div class="login_container">
-    <a href="/header.html" class="logo">REVIEW LOG</a>
+    <a href="/" class="logo">REVIEW LOG</a>
     <h3 class="title">회원가입</h3>
     <h5 class="title">REVIEW LOG 계정 생성</h5>
     <form action="/members/new" method="post" role="form" name="login_data" class="login_form" th:object="${memberFormDto}">
         <div class="email_box">
             <div class="tooltip hidden" id="tooltip_email"></div>
             <input type="email" id="email" name="email">
-            <label th:for="email" th:field="*{email}" class="input_box"  id="email_placeholder">이메일을 입력해주세요</label>
-            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">Incorrect data</p>
+            <label for="email" class="input_box" id="email_placeholder">이메일을 입력해주세요</label>
+            <p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="fieldError">잘못된 데이터입니다</p>
         </div>
 
         <div class="pw_box">
             <div class="tooltip hidden" id="tooltip_pw"></div>
             <input type="password" id="password" name="password">
-            <label th:for="password" th:field="*{password}" class="input_box" id="pw_placeholder" >비밀번호를 입력해주세요</label>
+            <label for="password" class="input_box" id="pw_placeholder">비밀번호를 입력해주세요</label>
         </div>
+
         <div class="pw_confirm_box">
             <div class="tooltip hidden" id="tooltip_pwC"></div>
             <input type="password" id="pw_confirm" name="pw_confirm">
-            <label th:for="confirmPassword"  class="input_box" id="pw_C_placeholder">비밀번호를 확인해 주세요</label>
-            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">Incorrect data</p>
+            <label for="pw_confirm" class="input_box" id="pw_C_placeholder">비밀번호를 확인해 주세요</label>
+            <p th:if="${#fields.hasErrors('password')}" th:errors="*{password}" class="fieldError">잘못된 데이터입니다</p>
         </div>
 
         <div class="name_box">
             <div class="tooltip hidden" id="tooltip_name"></div>
             <input type="text" id="name" name="name"/>
-            <label th:for="name"  class="input_box" id="name_placeholder">이름을 입력해주세요.</label>
-            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="fieldError">Incorrect data</p>
+            <label for="name" class="input_box" id="name_placeholder">이름을 입력해주세요.</label>
+            <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}" class="fieldError">잘못된 데이터입니다</p>
         </div>
 
         <div class="id_box">
             <div class="tooltip hidden" id="tooltip_Address"></div>
-            <input type="text" id="address" name="address"/>
-            <label th:for="address" th:field="*{address}" class="input_box" id="address_placeholder">주소를 입력해주세요</label>
-            <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">Incorrect data</p>
-            <!--            <p class="input_alert" id="id_alert">아이디를 입력해주세요.</p>-->
-        </div>
+        <input type="text" id="address" name="address"/>
+        <label for="address" class="input_box" id="address_placeholder">주소를 입력해주세요</label>
+        <p th:if="${#fields.hasErrors('address')}" th:errors="*{address}" class="fieldError">잘못된 데이터입니다</p>
+</div>
 
+        <!--        <div class="zip_box">-->
+        <!--            <div class="tooltip hidden" id="tooltip_Zipcode"></div>-->
+        <!--            &lt;!&ndash;            <label th:for="address"></label>&ndash;&gt;-->
+        <!--            <input type="text" id="zipCode" name="zipCode"/>-->
+        <!--            <label th:for="zipCode" th:field="*{zipCode}" class="input_box" id="zipcode_placeholder">우편번호를 입력해주세요</label>-->
+        <!--            <p th:if="${#fields.hasErrors('zipCode')}" th:errors="*{zipCode}" class="fieldError">Incorrect data</p>-->
+        <!--            &lt;!&ndash;            <p class="input_alert" id="id_alert">아이디를 입력해주세요.</p>&ndash;&gt;-->
+        <!--        </div>-->
 
+        <!--        <div class="detail_box">-->
+        <!--            <div class="tooltip hidden" id="tooltip_detail"></div>-->
+        <!--            &lt;!&ndash;            <label th:for="address"></label>&ndash;&gt;-->
+        <!--            <input type="text" id="detail_Address" name="detail_Address"/>-->
+<!--                    <label th:for="detail_Address" th:field="*{detail_Address}" class="input_box" id="detail_placeholder">상세주소를 입력해주세요</label>-->
+<!--                    <p th:if="${#fields.hasErrors('detail_Address')}" th:errors="*{detail_Address}" class="fieldError">Incorrect data</p>-->
+<!--                    &lt;!&ndash;            <p class="input_alert" id="id_alert">아이디를 입력해주세요.</p>&ndash;&gt;-->
+<!--                </div>-->
 
-        <div class="btn_wrapper">
-            <!--            <a href="/members/createAccount"></a>-->
-            <button type="submit" class="btn btn-primary" value="가입하기">가입하기</button>
-            <p th:if="${createErrorMsg}" class="error" th:text="${createErrorMsg}"/>
-        </div>
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
-    </form>
+<div class="btn_wrapper">
+    <button type="submit" class="btn btn-primary" value="가입하기">가입하기</button>
+    <p th:if="${createErrorMsg}" class="error" th:text="${createErrorMsg}"/>
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+</div>
+</form>
 </div>
 </body>
 </html>

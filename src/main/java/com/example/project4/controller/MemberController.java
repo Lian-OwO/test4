@@ -51,6 +51,8 @@ public class MemberController {
 
     @PostMapping(value="/mypage")
     public String updateMember(@Valid MemberFormDto memberFormDto, BindingResult bindingResult, Model model) {
+        // "password" 필드의 유효성 검사 오류를 제거
+        bindingResult.getFieldErrors("password").clear();
         if (bindingResult.hasErrors()) {
             // 유효성 검사 에러가 있는 경우
             return "member/mypage";
@@ -71,8 +73,11 @@ public class MemberController {
             // 수정이 실패한 경우, 해당 예외에 따라 에러 메시지를 추가하거나 다른 처리를 수행
             model.addAttribute("errorMessage", "수정 중 오류가 발생했습니다: " + e.getMessage());
         }
+        // 필요한 데이터나 폼 필드의 값을 모델에 추가
+        model.addAttribute("myPage", memberFormDto);
 
-        return "forward:/member/mypage";
+//        return "member/mypage";
+        return "redirect:/members/mypage";
     }
 
 
