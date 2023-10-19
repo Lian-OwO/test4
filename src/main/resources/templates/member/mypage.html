@@ -48,13 +48,13 @@
                     <!--                    <span class="text_data">123</span>-->
                     <!--                </div>-->
 
-                    <div class="my_info">
+                    <div class="my_info" >
                         <div class="text_css">비밀번호 변경</div>
                         <input type="password" class="form-control" th:field="*{password}" />
                     </div>
                     <div class="my_info">
                         <div class="text_css">비밀번호 확인</div>
-                        <input type="password" id="update_pw_confirm" class="form-control" th:field="*{update_pw_confirm}" />
+                        <input type="password" id="update_pw" class="form-control" th:field="*{update_pw}" />
                         <p th:if="${passwordError}" class="fieldError" th:text="${passwordError}"></p>
                     </div>
                     <div class="my_info">
@@ -72,10 +72,7 @@
             <meta name="_csrf" content="YOUR_CSRF_TOKEN_HERE">
             <script>
 
-                // CSRF 토큰을 가져오는 함수 정의
                 function getCsrfToken() {
-                    // 원하는 방식으로 CSRF 토큰을 가져오세요.
-                    // 이 예시에서는 <meta> 태그에서 name이 "_csrf"인 값을 가져오는 것으로 가정합니다.
                     var csrfToken = document.querySelector('meta[name="_csrf"]').getAttribute('content');
                     return csrfToken;
                 }
@@ -103,25 +100,7 @@
                     }
                 }
             </script>
-            <!--        </form>-->
-            <!--                <form action="#" method="post" class="update_form">-->
-            <!-- 변경할 비밀번호와 비밀번호 확인은 JS에서 비교 후 전송 -->
 
-            <!--                    <div class="update_form_input">-->
-            <!--                        <div class="text_css">비밀번호 변경</div>-->
-            <!--                        <input type="password" id="update_pw" name="update_pw"/>-->
-            <!--                    </div>-->
-            <!--                    <div class="update_form_input">-->
-            <!--                        <div class="text_css">비밀번호 확인</div>-->
-            <!--                        <input type="password" id="update_pw_confirm"/>-->
-            <!--                    </div>-->
-            <!--                    <div class="update_form_input">-->
-            <!--                        <div class="text_css">이메일</div>-->
-            <!--                        <input type="email" id="update_email"/>-->
-            <!--                    </div>-->
-            <!--                    <button type="submit" class="btn btn-primary" onclick="return modifyCheckAll()">수정하기</button>-->
-            <!--                </form>-->
-            <!--            </div>-->
         </div>
         <div class="my_review" sec:authorize="hasRole('USER') or hasRole('ADMIN')">
             <h5 style="margin-left: 10px;">리뷰 게시글</h5>

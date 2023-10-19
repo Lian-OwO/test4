@@ -18,7 +18,7 @@
 
 <body>
 <div class="login_container">
-    <a href="/header.html" class="logo">REVIEW LOG</a>
+    <a href="/" class="logo">REVIEW LOG</a>
     <h3 class="title">회원가입</h3>
     <h5 class="title">REVIEW LOG 계정 생성</h5>
     <form action="/members/new" method="post" role="form" name="login_data" class="login_form" th:object="${memberFormDto}">
@@ -77,7 +77,7 @@
 <div class="btn_wrapper">
     <button type="submit" class="btn btn-primary" value="가입하기">가입하기</button>
     <p th:if="${createErrorMsg}" class="error" th:text="${createErrorMsg}"/>
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
 </div>
 </form>
 </div>

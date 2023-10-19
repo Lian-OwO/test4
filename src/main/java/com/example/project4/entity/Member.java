@@ -30,11 +30,11 @@ public class Member extends BaseEntity{
     @Column(unique = true)
     private String email;
     private String password;
-    private String update_pw_confirm;
+    private String update_pw;
     private String address;
-    private String detail_Address;
-    @Column(name = "zipCode")
-    private int zipCode;
+//    private String detail_Address;
+//    @Column(name = "zipCode")
+//    private int zipCode;
     @Enumerated(EnumType.STRING)
     private Role role;
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
@@ -60,8 +60,8 @@ public class Member extends BaseEntity{
             member.setName(memberFormDto.getName());
             member.setEmail(memberFormDto.getEmail());
             member.setAddress(memberFormDto.getAddress());
-            member.setDetail_Address(memberFormDto.getDetail_Address());
-            member.setZipCode(memberFormDto.getZipCode());
+//            member.setDetail_Address(memberFormDto.getDetail_Address());
+//            member.setZipCode(memberFormDto.getZipCode());
 
             // 비밀번호 업데이트가 필요한 경우:
             if (!memberFormDto.getPassword().isEmpty()) {
