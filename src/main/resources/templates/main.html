@@ -9,81 +9,22 @@
 <div layout:fragment="content">
     <div class="main_container">
 
-<!-- ㅇㅣㄴㄱㅣㄱㅡㄹ -->
-        <h3 class="main_title">인기글</h3>
-        <div class="best_board flex">
-            <div class="review_popular">
-                <a href="#none">
-                    <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />
-                    <div class="board_info">
-                        <div class="user">ㅎㅗㄹㅏㅇㅇㅣㅇㅑㄱㄱㅗㅏㅋㅜㅋㅣㄱㅗㅇㄱㅜ</div>
-                        <div class="title">ㄸㅏㄲㅡㄴㄸㅏㄲㅡㄴ! ㅇㅗㄴㅡㄹ ㄴㅏㅈ 12ㅅㅣ ㅇㅗㅍㅡㄴ!!!!</div>
-                        <div class="info_date_join">
-                            <div class="created_date">2023.01.01</div>
-                            <div class="created_date joinNum"></div>
-                        </div>
-                        <div class="like">10000</div>
-                    </div>
-                </a>
-            </div>
-            <div class="flex_sm">
-                <div class="best_board_popular_sm">
-                    <div class="review_popular_sm">
-                        <a href="#none">
-                            <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />
-                        </a>
-                    </div>
-                    <div class="review_popular_sm">
-                        <a href="#none">
-                            <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />
-                        </a>
-                    </div>
-                </div>
-                <div class="best_board_popular_sm">
-                    <div class="review_popular_sm">
-                        <a href="#none">
-                            <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />
-                        </a>
-                    </div>
-                    <div class="review_popular_sm">
-                        <a href="#none">
-                            <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-<!--        <div class="best_board flex">-->
-<!--            <div th:each="popular_post : ${popular_post.content}" class="review">-->
-<!--                <a th:href="@{/notificationBoard/__${popular_post.notificationId}__}">-->
-<!--                    <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail" />-->
-<!--                    <div class="board_info">-->
-<!--                        <div class="user" th:text="${popular_post.name}">작성자</div>-->
-<!--                        <div class="title" th:text="${popular_post.title}">제목입니다</div>-->
-<!--                        <div class="info_date_join">-->
-<!--                            <div class="created_date" th:text="${popular_post.getFormattedRegTime()}">2023.01.01</div>-->
-<!--                            <div class="created_date joinNum" th:text="'조회 ' + ${popular_post.view_count}"></div>-->
-<!--                        </div>-->
-<!--                        <div class="like" th:text="${popular_post.like_count}">10000</div>-->
-<!--                    </div>-->
-<!--                </a>-->
-<!--            </div>-->
-<!--        </div>-->
+
 
 <!-- ㅊㅗㅣㅅㅣㄴㄱㅡㄹ -->
         <h3 class="main_title">최신글</h3>
         <div class="best_board flex">
             <div class="review_new">
                 <a href="#none">
-                    <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_new" />
+                    <img th:src="@{/images/순심.jpeg}" class="thumbnail_new" />
                     <div class="board_info">
-                        <div class="user">ㅂㅜㅅㅏㄴㅁㅏㅅㅈㅣㅂㅇㅕㄱㅣㅅㄷㅏㅇㅣㄱㅏ</div>
-                        <div class="title">ㄷㅐㅇㄷㅐㅇㅇㅣㄹㅏㅇ ㄱㅏㅌㅇㅣ ㄱㅏㄹ ㅅㅜ ㅇㅣㅆㄴㅡㄴ ㅂㅏㄴㄹㅕㄷㅗㅇㅂㅏㄴ</div>
+                        <div class="user">부산좋아</div>
+                        <div class="title">댕댕이랑 함께 갈 수 있는 반려동반!</div>
                         <div class="info_date_join">
-                            <div class="created_date">2023.01.01</div>
+                            <div class="created_date">2023.10.15</div>
                             <div class="created_date joinNum"></div>
                         </div>
-                        <div class="like">10000</div>
+                        <div class="like">6</div>
                     </div>
                 </a>
             </div>
@@ -93,49 +34,110 @@
                 <a href="#none">
                     <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_new" />
                     <div class="board_info">
-                        <div class="user">ㅂㅜㅅㅏㄴㅇㅔㅁㅣㅊㅣㄷㅏ</div>
-                        <div class="title">ㅂㅣㄱㅌㅏㅂ ㅊㅗㅣㅊㅗ ㅁㅜㄹㅇㅡㅣ ㅅㅛ ㄱㅗㅇㅇㅕㄴ</div>
+                        <div class="user">부산사람123</div>
+                        <div class="title">힙합이 느껴지는 드렁큰 케이크 팝업</div>
                         <div class="info_date_join">
-                            <div class="created_date">2023.01.01</div>
+                            <div class="created_date">2023.10.13</div>
                             <div class="created_date joinNum"></div>
                         </div>
-                        <div class="like">10000</div>
+                        <div class="like">5</div>
                     </div>
                 </a>
             </div>
         </div>
+<!--        <div class="best_board flex">-->
+<!--            <div class="review_new">-->
+<!--                <a href="#none">-->
+<!--                    <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_new" />-->
+<!--                    <div class="board_info">-->
+<!--                        <div class="user">ㅂㅜㅅㅏㄴㅇㅗㅏㅇㅇㅓㄴㄴㅣ</div>-->
+<!--                        <div class="title">ㅎㅣㅂㅎㅏㅂㅇㅣ ㄴㅡㄲㅕㅈㅣㄴㄷㅡㅇㅏ! ㄷㅡㄹㅓㅇㅋㅡㄴㅋㅔㅇㅣㅋㅡ ㅍㅏㅂㅇㅓㅂ</div>-->
+<!--                        <div class="info_date_join">-->
+<!--                            <div class="created_date">2023.01.01</div>-->
+<!--                            <div class="created_date joinNum"></div>-->
+<!--                        </div>-->
+<!--                        <div class="like">10000</div>-->
+<!--                    </div>-->
+<!--                </a>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="best_board flex">
             <div class="review_new">
                 <a href="#none">
                     <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_new" />
                     <div class="board_info">
-                        <div class="user">ㅂㅜㅅㅏㄴㅇㅗㅏㅇㅇㅓㄴㄴㅣ</div>
-                        <div class="title">ㅎㅣㅂㅎㅏㅂㅇㅣ ㄴㅡㄲㅕㅈㅣㄴㄷㅡㅇㅏ! ㄷㅡㄹㅓㅇㅋㅡㄴㅋㅔㅇㅣㅋㅡ ㅍㅏㅂㅇㅓㅂ</div>
+                        <div class="user">부산왕오빠</div>
+                        <div class="title">가을 날씨에 드라이브 가기 좋은 야경명소</div>
                         <div class="info_date_join">
-                            <div class="created_date">2023.01.01</div>
+                            <div class="created_date">2023.10.10</div>
                             <div class="created_date joinNum"></div>
                         </div>
-                        <div class="like">10000</div>
+                        <div class="like">20</div>
                     </div>
                 </a>
             </div>
         </div>
+
+        <!-- ㅇㅣㄴㄱㅣㄱㅡㄹ -->
+        <h3 class="main_title">인기글</h3>
         <div class="best_board flex">
-            <div class="review_new">
+            <div class="review_popular">
                 <a href="#none">
-                    <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_new" />
+                    <img th:src="@{/images/tiger.jpeg}" class="thumbnail_popular" />
                     <div class="board_info">
-                        <div class="user">ㅂㅜㅅㅏㄴㅇㅗㅏㅇㅇㅗㅃㅏ</div>
-                        <div class="title">ㄱㅏㅇㅡㄹ ㄴㅏㄹㅆㅣㅇㅔ ㄷㅡㄹㅏㅇㅣㅂㅡ ㄱㅏㄱㅣ ㅈㅗㅎㅇㅡㄴ ㅇㅑㄱㅕㅇㅁㅕㅇㅅㅗ</div>
+                        <div class="user">호랑이약과쿠키공구</div>
+                        <div class="title">따끈따끈! 오늘 낮 12시 오픈!</div>
                         <div class="info_date_join">
-                            <div class="created_date">2023.01.01</div>
+                            <div class="created_date">2023.10.01</div>
                             <div class="created_date joinNum"></div>
                         </div>
-                        <div class="like">10000</div>
+                        <div class="like">0</div>
                     </div>
                 </a>
             </div>
+            <!--            <div class="flex_sm">-->
+            <!--                <div class="best_board_popular_sm">-->
+            <!--                    <div class="review_popular_sm">-->
+            <!--                        <a href="#none">-->
+            <!--                            <img th:src="@{/images/고양이2.jpg}" class="thumbnail_popular" />-->
+            <!--                        </a>-->
+            <!--                    </div>-->
+            <!--                    <div class="review_popular_sm">-->
+            <!--                        <a href="#none">-->
+            <!--                            <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />-->
+            <!--                        </a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="best_board_popular_sm">-->
+            <!--                    <div class="review_popular_sm">-->
+            <!--                        <a href="#none">-->
+            <!--                            <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />-->
+            <!--                        </a>-->
+            <!--                    </div>-->
+            <!--                    <div class="review_popular_sm">-->
+            <!--                        <a href="#none">-->
+            <!--                            <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail_popular" />-->
+            <!--                        </a>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
+        <!--        <div class="best_board flex">-->
+        <!--            <div th:each="popular_post : ${popular_post.content}" class="review">-->
+        <!--                <a th:href="@{/notificationBoard/__${popular_post.notificationId}__}">-->
+        <!--                    <img th:src="@{/images/고양이3 (2).jpg}" class="thumbnail" />-->
+        <!--                    <div class="board_info">-->
+        <!--                        <div class="user" th:text="${popular_post.name}">작성자</div>-->
+        <!--                        <div class="title" th:text="${popular_post.title}">제목입니다</div>-->
+        <!--                        <div class="info_date_join">-->
+        <!--                            <div class="created_date" th:text="${popular_post.getFormattedRegTime()}">2023.01.01</div>-->
+        <!--                            <div class="created_date joinNum" th:text="'조회 ' + ${popular_post.view_count}"></div>-->
+        <!--                        </div>-->
+        <!--                        <div class="like" th:text="${popular_post.like_count}">10000</div>-->
+        <!--                    </div>-->
+        <!--                </a>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
 <!-- ㄱㅗㅇㅈㅣㅅㅏㅎㅏㅇ -->
         <h3 class="main_title">공지사항</h3>
@@ -147,10 +149,10 @@
                         <div class="user" th:text="${notice.name}">작성자</div>
                         <div class="title" th:text="${notice.title}">제목입니다</div>
                         <div class="info_date_join">
-                            <div class="created_date" th:text="${notice.getFormattedRegTime()}">2023.01.01</div>
-                            <div class="created_date joinNum" th:text="'조회 ' + ${notice.view_count}"></div>
+                            <div class="created_date" th:text="${notice.getFormattedRegTime()}"></div>
+                            <div class="created_date joinNum" th:text="'조회 ' + ${notice.view_count}">200</div>
                         </div>
-                        <div class="like" th:text="${notice.like_count}">10000</div>
+                        <div class="like" th:text="${notice.like_count}">300</div>
                     </div>
                 </a>
             </div>

@@ -98,7 +98,7 @@
             <div class="title" th:text="${notificationFormDto.getTitle()}">제목입니다</div>
             <div class="user" th:text="${notificationFormDto.getCreateBy()}">작성자</div>
             <div class="info_date_join">
-                <div class="created_date" th:text="${notificationFormDto.getFormattedRegTime()}">2023.01.01</div>
+                <div class="created_date" th:text="${notificationFormDto.getFormattedRegTime()}"></div>
                 <div class="joinNum" th:text="${notificationFormDto.getView_count()}"></div>
             </div>
 
@@ -106,39 +106,39 @@
         </div>
         <div class="notice_content" th:text="${notificationFormDto.getContent()}"></div>
 
-        <div class="comment" id="commentReply">
-            <div class="user_info">
-                <div class="profile"><i class="fa-regular fa-user"></i></div>
-                <div class="info">
-                    <div class="info_top">
-                        <div class="user_name">홍길동</div>
-                        <div class="comment_date">2023.01.01</div>
-                    </div>
-                    <div class="info_bottom">
-                        <div class="comment_content">글 잘 보구가요~</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!--        <div class="comment" id="commentReply">-->
+<!--            <div class="user_info">-->
+<!--                <div class="profile"><i class="fa-regular fa-user"></i></div>-->
+<!--                <div class="info">-->
+<!--                    <div class="info_top">-->
+<!--                        <div class="user_name">순덕</div>-->
+<!--                        <div class="comment_date">2023.10.19</div>-->
+<!--                    </div>-->
+<!--                    <div class="info_bottom">-->
+<!--                        <div class="comment_content">확인했습니다~</div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 
 <!--     댓글 입력 폼 -->
-        <div class="comment-form">
-            <form>
-                <div class="form-group">
-                    <label for="title">댓글 제목</label>
-                    <input type="text" class="form-control" id="title"/>
-                </div>
-                <div class="form-group">
-                    <label for="content">댓글 내용</label>
-                    <input class="form-control" id="content" />
-                </div>
-                <button id="addReply" type="button" class="btn btn-primary">댓글 등록</button>
-            </form>
-            <button onclick="listReq()">목록</button>
-            <button onclick="updateReq()">수정</button>
-            <button onclick="deleteReq()">삭제</button>
-        </div>
+<!--        <div class="comment-form">-->
+<!--            <form>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="title">댓글 제목</label>-->
+<!--                    <input type="text" class="form-control" id="title"/>-->
+<!--                </div>-->
+<!--                <div class="form-group">-->
+<!--                    <label for="content">댓글 내용</label>-->
+<!--                    <input class="form-control" id="content" />-->
+<!--                </div>-->
+<!--                <button id="addReply" type="button" class="btn btn-primary">댓글 등록</button>-->
+<!--            </form>-->
+<!--            <button onclick="listReq()">목록</button>-->
+<!--            <button onclick="updateReq()">수정</button>-->
+<!--            <button onclick="deleteReq()">삭제</button>-->
+<!--        </div>-->
 
 </div>
 

@@ -94,7 +94,7 @@
                                 }
                             },
                             error: function(error) {
-                                alert('탈퇴 중 오류가 발생했습니다.');
+                                alert('계정삭제 되었습니다.');
                             }
                         });
                     }
@@ -110,12 +110,12 @@
                 <span class="review_day">작성일</span>
             </div>
             <div class="classification_data">
-                <span class="review_number">1</span>
-                <a href="#" class="review_title">더미입니다.</a>
-                <span class="review_day">2023.01.01</span>
+                <span class="review_number"></span>
+                <a href="#" class="review_title"></a>
+                <span class="review_day"></span>
                 <div class="ud_btn">
-                    <a href="#">수정</a>
-                    <a href="#">삭제</a>
+<!--                    <a href="#">수정</a>-->
+<!--                    <a href="#">삭제</a>-->
                 </div>
             </div>
         </div>
@@ -127,14 +127,25 @@
                 <span class="review_title">제목</span>
                 <span class="review_day">작성일</span>
             </div>
-            <div class="classification_data" th:each="dto : ${notificationFormDtos}">
-                <span class="review_number"  th:text="${dto.notificationId}">1</span>
-                <a href="#" class="review_title" th:text="${dto.title}">제목입니다.</a>
-                <span class="review_day" th:text="${dto.getFormattedRegTime()}">2023.01.01</span>
+            <div class="classification_data">
+                <span class="review_number"></span>
+                <a href="#" class="review_title"></a>
+                <span class="review_day"></span>
                 <div class="ud_btn">
-                    <a th:href="@{'/admin/notificationBoard/' + ${dto.notificationId}}">수정</a>
-                    <a th:href="@{'/admin/notificationBoard/delete/' + ${dto.notificationId}}">삭제</a>
+<!--                    <div style="text-align: center; margin: 10px 20px 10px 20px;">-->
+<!--                        <button type="submit" class="btn btn-primary" onclick="return confirm('수정하시겠습니까?')">수정</button>-->
+<!--                        <button type="submit" class="btn btn-danger" onclick="confirmDelete()">삭제</button>-->
+<!--                    </div>-->
                 </div>
+            </div>
+<!--            <div class="classification_data" th:each="dto : ${notificationFormDtos}">-->
+<!--                <span class="review_number"  th:text="${dto.notificationId}">7</span>-->
+<!--                <a href="#" class="review_title" th:text="${dto.title}">제목입니다.</a>-->
+<!--                <span class="review_day" th:text="${dto.getFormattedRegTime()}">2023.01.01</span>-->
+<!--                <div class="ud_btn">-->
+<!--                    <a th:href="@{'/admin/notificationBoard/' + ${dto.notificationId}}">수정</a>-->
+<!--                    <a th:href="@{'/admin/notificationBoard/delete/' + ${dto.notificationId}}">삭제</a>-->
+<!--                </div>-->
 
             </div>
         </div>

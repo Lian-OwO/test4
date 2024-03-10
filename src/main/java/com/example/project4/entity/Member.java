@@ -6,11 +6,9 @@ import com.example.project4.repository.MemberRepository;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.apache.tomcat.jni.Address;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import javax.persistence.*;
-import java.net.PasswordAuthentication;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;

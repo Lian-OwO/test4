@@ -20,7 +20,6 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityNotFoundException;
 import javax.validation.Valid;
-import java.security.Principal;
 import java.util.List;
 
 @RequestMapping("/members")
@@ -33,13 +32,12 @@ public class MemberController {
     private final BoardService boardService;
 
     @GetMapping(value = "/mypage")
-    public String myPage(Model model, Principal principal) {
+    public String myPage(Model model) {
         try {
             // 현재 사용자의 이메일 가져오기
             String email = ((UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
-            List<NotificationFormDto> notificationFormDtos = boardService.findByCreateBy(principal.getName());
+
             Member member = memberService.getMemberData(email);
-            model.addAttribute("notificationFormDtos", notificationFormDtos);
             model.addAttribute("myPage", member);
             return "member/mypage"; // 정보 출력 폼
         } catch (EntityNotFoundException ex) {
@@ -63,7 +61,6 @@ public class MemberController {
             if (passwordEncoder.matches(memberFormDto.getUpdate_pw(), member.getPassword())) {
                 // 비밀번호가 일치하면 정보 업데이트
                 memberService.saveMember(member);
-
                 model.addAttribute("successMessage", "회원 정보가 성공적으로 업데이트되었습니다.");
             } else {
                 // 비밀번호가 일치하지 않으면 에러 메시지 설정
